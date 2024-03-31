@@ -1,0 +1,2 @@
+SECRET_URI='mongodb+srv://revlic:PIp3EjqK3TOGWO8L@recipecalccluster.bnedmef.mongodb.net/?retryWrites=true&w=majority&appName=recipeCalcCluster'
+DB_NAME='recipeCalc
