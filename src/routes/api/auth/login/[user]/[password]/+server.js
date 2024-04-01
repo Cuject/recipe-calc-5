@@ -1,15 +1,15 @@
-import { redirect, fail } from '@sveltejs/kit';
+/*import { redirect, fail } from '@sveltejs/kit';
 import { sha256, sha224 } from 'js-sha256';
 
 import { json } from "@sveltejs/kit";
 import {MongoClient} from 'mongodb';
 import { SECRET_URI, DB_NAME } from '$env/static/private'; 
-
+*/
 export async function GET(RequestEvent){
     const { params } = RequestEvent;
     const { user , password} = params;
     
-    client = new MongoClient(SECRET_URI);
+    /*client = new MongoClient(SECRET_URI);
     db = client.db(DB_NAME);
 
     const users = await db.collection("users").find().toArray();
@@ -22,7 +22,7 @@ export async function GET(RequestEvent){
         return json({message: "Missing email or password", logged_in: false, user: user})
     }
     
-    if(!user_emails.includes(email)){
+    if(!user_emails.includes(email))
 
         return json({message: "User doesn't exist", logged_in: false, user: user})
 
@@ -36,6 +36,6 @@ export async function GET(RequestEvent){
     }
 
     return json({message: 'Logged in', logged_in: true, user: user})*/
-    return json({user: user, password: password, emails: user_emails, hashes: user_hashes})
+    return json({message: "Log In", user:user, password:password})
 
 }
