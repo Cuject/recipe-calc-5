@@ -16,7 +16,7 @@ export async function GET(RequestEvent){
 
     
 
-    if (!email || !password) {
+    /*if (!email || !password) {
         return json({message: "Missing email or password", logged_in: false, user: user})
     }
     
@@ -33,7 +33,8 @@ export async function GET(RequestEvent){
         return json({message: "Incorrect email or password", logged_in: false, user: user})
     }
 
-    return json({message: 'Logged in', logged_in: true, user: user})
-    //return json({message: "Log In", user:user, password:password})
+    return json({message: 'Logged in', logged_in: true, user: user})*/
+
+    return json({message: "Log In", user:user, password:password, emails: user_emails, hashes: user_hashes, sample: sha224(sample)})
 
 }
