@@ -7,8 +7,8 @@ export async function GET(RequestEvent){
     const { params } = RequestEvent;
     const { user, password } = params;
     
-    client = new MongoClient(SECRET_URI);
-    db = client.db(DB_NAME);
+    const client = new MongoClient(SECRET_URI);
+    const db = client.db(DB_NAME);
 
     const users = await db.collection("users").find().toArray();
     const user_emails = users.map((user_email) => {return user_email.email})
