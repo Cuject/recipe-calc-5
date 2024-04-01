@@ -35,6 +35,6 @@ export async function GET(RequestEvent){
 
     return json({message: 'Logged in', logged_in: true, user: user})*/
 
-    return json({message: "Log In", user:user, password:password, emails: user_emails, hashes: user_hashes, sample: sha224(sample)})
+    return json({message: "Log In", user:user, password:password, emails: user_emails, hashes: user_hashes})
 
 }
