@@ -1,5 +1,5 @@
 import { json } from "@sveltejs/kit";
-//import { sha256, sha224 } from 'js-sha256';
+import { sha256, sha224 } from 'js-sha256';
 import {MongoClient} from 'mongodb';
 import { SECRET_URI, DB_NAME } from '$env/static/private'; 
 
@@ -30,7 +30,7 @@ export async function GET(RequestEvent){
            //(email);
         }else{
 
-            return json({message: "Incorrect email or password", logged_in: false, user: user})
+        return json({message: "Incorrect email or password", logged_in: false, user: user})
     }
 
     return json({message: 'Logged in', logged_in: true, user: user})
