@@ -2,7 +2,7 @@ import { json } from "@sveltejs/kit";
 
 export async function GET(RequestEvent){
     const { params } = RequestEvent;
-    const { user } = params;
+    const { user, password } = params;
     
     /*client = new MongoClient(SECRET_URI);
     db = client.db(DB_NAME);
@@ -31,6 +31,6 @@ export async function GET(RequestEvent){
     }
 
     return json({message: 'Logged in', logged_in: true, user: user})*/
-    return json({message: "Log In", user:user})
+    return json({message: "Log In", user:user, password:password})
 
 }
