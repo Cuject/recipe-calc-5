@@ -1,13 +1,6 @@
-/*import { redirect, fail } from '@sveltejs/kit';
-import { sha256, sha224 } from 'js-sha256';
-
-import { json } from "@sveltejs/kit";
-import {MongoClient} from 'mongodb';
-import { SECRET_URI, DB_NAME } from '$env/static/private'; 
-*/
 export async function GET(RequestEvent){
     const { params } = RequestEvent;
-    const { user , password} = params;
+    const { user } = params;
     
     /*client = new MongoClient(SECRET_URI);
     db = client.db(DB_NAME);
@@ -36,6 +29,6 @@ export async function GET(RequestEvent){
     }
 
     return json({message: 'Logged in', logged_in: true, user: user})*/
-    return json({message: "Log In", user:user, password:password})
+    return json({message: "Log In", user:user})
 
 }
