@@ -1,5 +1,5 @@
 import { json } from "@sveltejs/kit";
-import { sha256, sha224 } from 'js-sha256';
+//import { sha256, sha224 } from 'js-sha256';
 import {MongoClient} from 'mongodb';
 import { SECRET_URI, DB_NAME } from '$env/static/private'; 
 
