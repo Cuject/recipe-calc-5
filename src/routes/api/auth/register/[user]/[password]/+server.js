@@ -12,8 +12,25 @@ export async function GET(RequestEvent){
 
     const users = await db.collection("users").find().toArray();
     const user_emails = users.map((user_email) => {return user_email.email})
-    const user_hashes = users.map((user_hash) => {return user_hash.hash})
+    //const user_hashes = users.map((user_hash) => {return user_hash.hash})
 
-    return json({message: "Log In", user:user, password:password, emails: user_emails, hashes: user_hashes})
+    if (!user || !password) {
+        return json({message: "Missing email or password", logged_in: false, user: user})
+    }
+    
+    if(user_emails.includes(user)){
+            return json({message: "User Already Exists", logged_in: false, user: user})
+        }else{
+            db.collection("users").insertOne({email:user, hash:sha224(user+password)});
+    }
+    
+
+    //cookies.set("user", email, {path: '/'});
+   //(email)
+   return json({message: "Successfully Registered", logged_in: true, user: user})
+
+
+
+    //return json({message: "Log In", user:user, password:password, emails: user_emails, hashes: user_hashes})
 
 }
