@@ -71,7 +71,8 @@ export async function PATCH(RequestEvent){
             _id: recipes_data[recipeIndex]._id, 
             user:user, name: new_name, 
             food_items: recipes_data[recipeIndex].food_items 
-        });
+        }
+    );
 }
 
 
