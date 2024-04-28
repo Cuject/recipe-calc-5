@@ -25,7 +25,9 @@ export async function PATCH(RequestEvent){
     const client = new MongoClient(SECRET_URI);
     const db = client.db(DB_NAME)
     const recipes_data = await db.collection("recipes").find({user: user}).toArray();
+
     const recipes_names = recipes_data.map((recipe_name) => {return recipe_name.name})
+    const recipes_waters = recipes_data.map((recipe_water) => {return recipe_water.water})
 
     const { new_qty } = await request.json()
 
@@ -45,6 +47,7 @@ export async function PATCH(RequestEvent){
             
             return json({
                 food_ID: recipes_data[recipeIndex].food_items[foodIndex].food_ID,
+                water : recipes_waters.map((nutrient) => {return (new_qty * (nutrient/100))}),
                 qty: new_qty
             })
         }
