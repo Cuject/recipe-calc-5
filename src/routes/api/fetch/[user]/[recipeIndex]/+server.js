@@ -29,6 +29,8 @@ export async function POST(RequestEvent){
     const recipes_data = await db.collection("recipes").find({user: user}).toArray();
     const recipes_names = recipes_data.map((recipe_name) => {return recipe_name.name})
 
+    const fct = await db.collection('fct').find().toArray()
+
     const recipe_food_items = recipes_data[recipeIndex].food_items
     const recipe_food_IDs = recipe_food_items.map((food_name) => {return food_name.food_ID})
 
@@ -37,7 +39,13 @@ export async function POST(RequestEvent){
     }else{
         db.collection("recipes").updateOne(
             {user: user, name:recipes_names[recipeIndex]}, 
-            { $push: {food_items:{food_ID: new_food_item, qty:100} }}
+            { $push: {food_items:
+                {
+                    food_ID: new_food_item, 
+                    food_ND: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).food_ND,
+                    qty:100
+                } 
+            }}
         )
     }
 
