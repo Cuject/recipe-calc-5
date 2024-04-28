@@ -76,8 +76,35 @@ export async function POST(RequestEvent){
     }
 
     return json({
-        food_ID: new_food_item,
-        qty: 100
+        food_ID: new_food_item, 
+                    food_ND: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).food_ND,
+                    sci_Name: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sci_Name,
+                    com_Name: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).com_Name,
+                    edi_Portion: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).edi_Portion,
+                    water: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).water,
+                    energy: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).energy,
+                    protein: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).protein,
+                    total_fat: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).total_fat,
+                    carbohydrates: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).carbohydrates,
+                    ash: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).ash,
+                    fiber: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).fiber,
+                    sugar: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sugar,
+                    calcium: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).calcium,
+                    phosphorus: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).phosphorus,
+                    iron: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).iron,
+                    sodium: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sodium,
+                    vit_A: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).vit_A,
+                    beta_carotene: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).beta_carotene,
+                    rae: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).rae,
+                    thiamin: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).thiamin,
+                    riboflavin: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).riboflavin,
+                    niacin: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).niacin,
+                    vit_C: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).vit_C,
+                    FA_satu: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).FA_satu,
+                    FA_mono: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).FA_mono,
+                    FA_poly: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).FA_poly,
+                    cholesterol: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).cholesterol,
+                    qty:100
     })
 
 }
