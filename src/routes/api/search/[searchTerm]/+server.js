@@ -28,7 +28,7 @@ export async function GET(RequestEvent){
     
 
     return json({
-        search_results,
+       // search_results,
         searchTerm: searchTerm
     })
 }
