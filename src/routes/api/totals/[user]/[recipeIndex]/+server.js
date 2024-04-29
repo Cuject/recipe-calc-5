@@ -16,8 +16,15 @@ export async function GET(RequestEvent){
 
     const water_list = recipe_data.food_items.map((item) => {return ((item.water/100) * item.qty)})
 
+    const water_total = 0;
+
+    water_list.forEach(element => { 
+        water_total += element
+    });
+
     return json({
-        water_list
+        water_list,
+        water_total
     })
 }
 
