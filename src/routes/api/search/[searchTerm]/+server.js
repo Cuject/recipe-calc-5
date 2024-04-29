@@ -29,7 +29,7 @@ export async function GET(RequestEvent){
 
     return json({
        search_results,
-        searchTerm: searchTerm,
-        change: "sevem"
+        searchTerm: searchTerm.toLowerCase(),
+        change: "eight"
     })
 }
