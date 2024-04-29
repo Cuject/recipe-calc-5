@@ -21,7 +21,7 @@ export async function GET(RequestEvent){
     const carbohydrates_list = recipe_data.food_items.map((item) => {return ((item.carbohydrates/100) * item.qty)})
     const ash_list = recipe_data.food_items.map((item) => {return ((item.ash/100) * item.qty)})
     const fiber_list = recipe_data.food_items.map((item) => {return ((item.fiber/100) * item.qty)})
-    const sugar_list = recipe_data.food_items.map((item) => {return ((item.sugar/100) * item.qty)})
+    const sugars_list = recipe_data.food_items.map((item) => {return ((item.sugars/100) * item.qty)})
 
     var water_total = 0;
     var energy_total = 0;
@@ -30,7 +30,7 @@ export async function GET(RequestEvent){
     var carbohydrates_total = 0;
     var ash_total = 0;
     var fiber_total = 0;
-    var sugar_total = 0;
+    var sugars_total = 0;
 
     water_list.forEach(element => {water_total += element});
     energy_list.forEach(element => {energy_total += element});
@@ -39,13 +39,13 @@ export async function GET(RequestEvent){
     carbohydrates_list.forEach(element => {carbohydrates_total += element});
     ash_list.forEach(element => {ash_total += element});
     fiber_list.forEach(element => {fiber_total += element});
-    sugar_list.forEach(element => {sugar_total += element});
+    sugars_list.forEach(element => {sugars_total += element});
     
 
     return json({
         //water_list,
-        recipe_totals: [water_total, protein_total, total_fat_total, carbohydrates_total, ash_total, fiber_total, sugar_total],
-        sugar_list
+        recipe_totals: [water_total, protein_total, total_fat_total, carbohydrates_total, ash_total, fiber_total, sugars_total],
+        sugars_list
     })
 }
 
@@ -85,7 +85,7 @@ export async function POST(RequestEvent){
                     carbohydrates: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).carbohydrates,
                     ash: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).ash,
                     fiber: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).fiber,
-                    sugar: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sugar,
+                    sugars: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sugars,
                     calcium: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).calcium,
                     phosphorus: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).phosphorus,
                     iron: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).iron,
@@ -120,7 +120,7 @@ export async function POST(RequestEvent){
                     carbohydrates: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).carbohydrates,
                     ash: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).ash,
                     fiber: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).fiber,
-                    sugar: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sugar,
+                    sugars: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).sugars,
                     calcium: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).calcium,
                     phosphorus: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).phosphorus,
                     iron: fct.find((foodItem) => {return foodItem.food_ID == new_food_item}).iron,
