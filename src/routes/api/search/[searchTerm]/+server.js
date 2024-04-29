@@ -19,11 +19,12 @@ export async function GET(RequestEvent){
     const food_NDs  = fct.map((item) => {return item.food_ND})
     const com_Names = fct.map((item) => {return item.com_Name})
 
-    var search_results = []
+    var search_results = fct.map((item) => {
 
-    for(i=0; i < food_NDs.length(); i++){
-        search_results.push(food_NDs[i])
-    }
+        return fct.indexOf(item)
+    })
+
+    
 
  
 
@@ -34,6 +35,6 @@ export async function GET(RequestEvent){
     return json({
        search_results,
         searchTerm: searchTerm.toLowerCase(),
-        change: "eight"
+        change: "ten"
     })
 }
