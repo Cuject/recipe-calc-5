@@ -19,10 +19,14 @@ export async function GET(RequestEvent){
     const food_NDs  = fct.map((item) => {return item.food_ND})
     const com_Names = fct.map((item) => {return item.com_Name})
 
-    var search_results = fct.map((item) => {
+    var search_results = []
+    var garbage = []
+    fct.map((item) => {
 
         if(food_NDs[fct.indexOf(item)].toLowerCase().includes(searchTerm.toLowerCase()) || com_Names[fct.indexOf(item)].toLowerCase().includes(searchTerm.toLowerCase())){
-            return item
+            search_results.push(item)
+        }else{
+            garbage.push(item)
         }
     })
 
@@ -37,6 +41,6 @@ export async function GET(RequestEvent){
     return json({
        search_results,
         searchTerm: searchTerm.toLowerCase(),
-        change: "twenty"
+        change: "thirty"
     })
 }
