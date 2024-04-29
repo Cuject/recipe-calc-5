@@ -8,7 +8,6 @@ export async function POST(RequestEvent){
     //const { user, password } = params;
 
     const { user, password } = await request.json()
-
     
     const client = new MongoClient(SECRET_URI);
     const db = client.db(DB_NAME);
