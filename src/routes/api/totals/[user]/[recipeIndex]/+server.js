@@ -22,6 +22,21 @@ export async function GET(RequestEvent){
     const ash_list = recipe_data.food_items.map((item) => {return ((item.ash/100) * item.qty)})
     const fiber_list = recipe_data.food_items.map((item) => {return ((item.fiber/100) * item.qty)})
     const sugars_list = recipe_data.food_items.map((item) => {return ((item.sugars/100) * item.qty)})
+    const calcium_list = recipe_data.food_items.map((item) => {return ((item.calcium/100) * item.qty)})
+    const phosphorus_list = recipe_data.food_items.map((item) => {return ((item.phosphorus/100) * item.qty)})
+    const iron_list = recipe_data.food_items.map((item) => {return ((item.iron/100) * item.qty)})
+    const sodium_list = recipe_data.food_items.map((item) => {return ((item.sodium/100) * item.qty)})
+    const vit_A_list = recipe_data.food_items.map((item) => {return ((item.vit_A/100) * item.qty)})
+    const beta_carotene_list = recipe_data.food_items.map((item) => {return ((item.beta_carotene/100) * item.qty)})
+    const rae_list = recipe_data.food_items.map((item) => {return ((item.rae/100) * item.qty)})
+    const thiamin_list = recipe_data.food_items.map((item) => {return ((item.thiamin/100) * item.qty)})
+    const riboflavin_list = recipe_data.food_items.map((item) => {return ((item.riboflavin/100) * item.qty)})
+    const niacin_list = recipe_data.food_items.map((item) => {return ((item.niacin/100) * item.qty)})
+    const vit_C_list = recipe_data.food_items.map((item) => {return ((item.vit_C/100) * item.qty)})
+    const FA_satu_list = recipe_data.food_items.map((item) => {return ((item.FA_satu/100) * item.qty)})
+    const FA_mono_list = recipe_data.food_items.map((item) => {return ((item.FA_mono/100) * item.qty)})
+    const FA_poly_list = recipe_data.food_items.map((item) => {return ((item.FA_poly/100) * item.qty)})
+    const cholesterol_list = recipe_data.food_items.map((item) => {return ((item.cholesterol/100) * item.qty)})
 
     var water_total = 0;
     var energy_total = 0;
@@ -31,6 +46,21 @@ export async function GET(RequestEvent){
     var ash_total = 0;
     var fiber_total = 0;
     var sugars_total = 0;
+    var calcium_total = 0;
+    var phosphorus_total = 0;
+    var iron_total = 0;
+    var sodium_total = 0;
+    var vit_A_total = 0;
+    var beta_carotene_total = 0;
+    var rae_total = 0;
+    var thiamin_total = 0;
+    var riboflavin_total = 0;
+    var niacin_total = 0;
+    var vit_C_total = 0;
+    var FA_satu_total = 0;
+    var FA_mono_total = 0;
+    var FA_poly_total = 0;
+    var cholesterol_total = 0;
 
     water_list.forEach(element => {water_total += element});
     energy_list.forEach(element => {energy_total += element});
@@ -40,11 +70,50 @@ export async function GET(RequestEvent){
     ash_list.forEach(element => {ash_total += element});
     fiber_list.forEach(element => {fiber_total += element});
     sugars_list.forEach(element => {sugars_total += element});
+    calcium_list.forEach(element => {calcium_total += element});
+    phosphorus_list.forEach(element => {phosphorus_total += element});
+    iron_list.forEach(element => {iron_total += element});
+    sodium_list.forEach(element => {sodium_total += element});
+    vit_A_list.forEach(element => {vit_A_total += element});
+    beta_carotene_list.forEach(element => {beta_carotene_total += element});
+    rae_list.forEach(element => {rae_total += element});
+    thiamin_list.forEach(element => {thiamin_total += element});
+    riboflavin_list.forEach(element => {riboflavin_total += element});
+    niacin_list.forEach(element => {niacin_total += element});
+    vit_C_list.forEach(element => {vit_C_total += element});
+    FA_satu_list.forEach(element => {FA_satu_total += element});
+    FA_mono_list.forEach(element => {FA_mono_total += element});
+    FA_poly_list.forEach(element => {FA_poly_total += element});
+    cholesterol_list.forEach(element => {cholesterol_total += element});
     
 
     return json({
         //water_list,
-        recipe_totals: [water_total, protein_total, total_fat_total, carbohydrates_total, ash_total, fiber_total, sugars_total]
+        recipe_totals: [
+            water_total, 
+            protein_total, 
+            total_fat_total, 
+            carbohydrates_total, 
+            ash_total, fiber_total, 
+            sugars_total, 
+            energy_total,
+            FA_satu_total,
+            FA_mono_total,
+            FA_poly_total,
+
+            calcium_total,
+            phosphorus_total,
+            iron_total,
+            sodium_total,
+            vit_A_total,
+            beta_carotene_total,
+            rae_total,
+            thiamin_total,
+            riboflavin_total,,
+            niacin_total,
+            vit_C_total,
+            cholesterol_total
+        ],
     })
 }
 
