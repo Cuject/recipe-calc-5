@@ -21,7 +21,7 @@ export async function GET(RequestEvent){
 
     var search_results = fct.map((item) => {
 
-        return fct.indexOf(item)
+        return food_NDs[fct.indexOf(item)].toLowerCase()
     })
 
     
