@@ -16,8 +16,9 @@ export async function GET(RequestEvent){
 
     const water_list = recipe_data.food_items.map((item) => {return ((item.water/100) * item.qty)})
 
-    return json(
-        recipe_data)
+    return json({
+        water_list
+    })
 }
 
 
