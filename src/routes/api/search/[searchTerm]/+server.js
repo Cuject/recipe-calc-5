@@ -28,7 +28,8 @@ export async function GET(RequestEvent){
     
 
     return json({
-       // search_results,
-        searchTerm: searchTerm
+       search_results,
+        searchTerm: searchTerm,
+        change: "sevem"
     })
 }
