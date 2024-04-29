@@ -48,8 +48,8 @@ export async function PATCH(RequestEvent){
             return json({
                 food_ID: recipes_data[recipeIndex].food_items[foodIndex].food_ID,
                 //water : recipes_waters, //.map((nutrient) => {return (parseFloat(new_qty) * (nutrient/100))}),
-                water: recipes_data[recipeIndex].food_items[foodIndex].water,
-                
+                water: (((recipes_data[recipeIndex].food_items[foodIndex].water)/100) * new_qty),
+
                 qty: new_qty
             })
         }
