@@ -19,12 +19,12 @@ export async function GET(RequestEvent){
     const food_NDs  = fct.map((item) => {return item.food_ND})
     const com_Names = fct.map((item) => {return item.com_Name})
 
-    var search_results
+    var search_results = []
 
     for (i = 0; i < food_NDs.length; i++){
-
-        
-
+        if(food_NDs[i].toLowerCase().includes(searchTerm.toLowerCase()) || com_Names[i].toLowerCase().includes(searchTerm.toLowerCase())){
+            search_results.push(fct[i]);
+        }
     }
 
 
@@ -33,6 +33,7 @@ export async function GET(RequestEvent){
     
 
     return json({
-        com_Names
+        search_results,
+        searchTerm: searchTerm.toLowerCase()
     })
 }
