@@ -75,7 +75,7 @@ export async function PATCH(RequestEvent){
                 cholesterol: (((recipes_data[recipeIndex].food_items[foodIndex].cholesterol)/100) * new_qty).toFixed(2),
 
                 //food_items: recipes_data[recipeIndex].food_items,
-                water_total: recipes_data[recipeIndex].food_items.map((nutrient) => {return ((nutrient.water/100) * new_qty)}),
+                //water_total: recipes_data[recipeIndex].food_items.map((nutrient) => {return ((nutrient.water/100) * new_qty)}),
 
                 qty: new_qty
             })
