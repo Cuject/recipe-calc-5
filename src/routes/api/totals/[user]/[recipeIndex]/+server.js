@@ -15,16 +15,36 @@ export async function GET(RequestEvent){
     const recipe_data = recipes_data[recipeIndex]
 
     const water_list = recipe_data.food_items.map((item) => {return ((item.water/100) * item.qty)})
+    const energy_list = recipe_data.food_items.map((item) => {return ((item.energy/100) * item.qty)})
+    const protein_list = recipe_data.food_items.map((item) => {return ((item.protein/100) * item.qty)})
+    const total_fat_list = recipe_data.food_items.map((item) => {return ((item.total_fat/100) * item.qty)})
+    const carbohydrates_list = recipe_data.food_items.map((item) => {return ((item.carbohydrates/100) * item.qty)})
+    const ash_list = recipe_data.food_items.map((item) => {return ((item.ash/100) * item.qty)})
+    const fiber_list = recipe_data.food_items.map((item) => {return ((item.fiber/100) * item.qty)})
+    const sugar_list = recipe_data.food_items.map((item) => {return ((item.sugar/100) * item.qty)})
 
     var water_total = 0;
+    var energy_total = 0;
+    var protein_total = 0;
+    var total_fat_total = 0;
+    var carbohydrates_total = 0;
+    var ash_total = 0;
+    var fiber_total = 0;
+    var sugar_total = 0;
 
-    water_list.forEach(element => { 
-        water_total += element
-    });
+    water_list.forEach(element => {water_total += element});
+    energy_list.forEach(element => {energy_total += element});
+    protein_list.forEach(element => {protein_total += element});
+    total_fat_list.forEach(element => {total_fat_total += element});
+    carbohydrates_list.forEach(element => {carbohydrates_total += element});
+    ash_list.forEach(element => {ash_total += element});
+    fiber_list.forEach(element => {fiber_total += element});
+    sugar_list.forEach(element => {sugar_total += element});
+    
 
     return json({
-        water_list,
-        water_total
+        //water_list,
+        recipe_totals: [water_total, protein_total, total_fat_total, carbohydrates_total, ash_total, fiber_total, sugar_total]
     })
 }
 
