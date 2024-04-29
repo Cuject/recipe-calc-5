@@ -21,7 +21,9 @@ export async function GET(RequestEvent){
 
     var search_results = fct.map((item) => {
 
-        return food_NDs[fct.indexOf(item)].toLowerCase()
+        if(food_NDs[fct.indexOf(item)].toLowerCase().includes(searchTerm.toLowerCase()) || com_Names[fct.indexOf(item)].toLowerCase().includes(searchTerm.toLowerCase())){
+            return item
+        }
     })
 
     
@@ -35,6 +37,6 @@ export async function GET(RequestEvent){
     return json({
        search_results,
         searchTerm: searchTerm.toLowerCase(),
-        change: "ten"
+        change: "twenty"
     })
 }
