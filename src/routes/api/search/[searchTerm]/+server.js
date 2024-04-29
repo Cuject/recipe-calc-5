@@ -16,8 +16,16 @@ export async function GET(RequestEvent){
         searchTerms: `${foodItem.food_ID} ${foodItem.food_ND} ${foodItem.com_Name} ${foodItem.edi_Portion}`
         }));
     
-    const food_NDs  = fct.map((item) => {return item.food_ND})
-    const com_Names = fct.map((item) => {return item.com_Name})
+    const food_NDs  = fct.map((item) => {return item.food_ND.toLowerCase()})
+    const com_Names = fct.map((item) => {return item.com_Name.toLowerCase()})
+
+    var search_results
+
+    for (i = 0; i < food_NDs.length; i++){
+
+        
+
+    }
 
 
 
