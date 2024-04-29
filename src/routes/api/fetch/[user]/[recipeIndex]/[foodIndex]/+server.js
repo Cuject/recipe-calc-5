@@ -55,7 +55,7 @@ export async function PATCH(RequestEvent){
                 carbohydrates: (((recipes_data[recipeIndex].food_items[foodIndex].carbohydrates)/100) * new_qty).toFixed(2),
                 ash: (((recipes_data[recipeIndex].food_items[foodIndex].ash)/100) * new_qty).toFixed(2),
                 fiber: (((recipes_data[recipeIndex].food_items[foodIndex].fiber)/100) * new_qty).toFixed(2),
-                sugar: (((recipes_data[recipeIndex].food_items[foodIndex].sugar)/100) * new_qty).toFixed(2),
+                sugars: (((recipes_data[recipeIndex].food_items[foodIndex].sugars)/100) * new_qty).toFixed(2),
 
                 calcium: (((recipes_data[recipeIndex].food_items[foodIndex].calcium)/100) * new_qty).toFixed(2),
                 phosphorus: (((recipes_data[recipeIndex].food_items[foodIndex].phosphorus)/100) * new_qty).toFixed(2),

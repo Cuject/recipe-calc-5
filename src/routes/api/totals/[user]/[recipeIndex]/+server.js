@@ -44,8 +44,7 @@ export async function GET(RequestEvent){
 
     return json({
         //water_list,
-        recipe_totals: [water_total, protein_total, total_fat_total, carbohydrates_total, ash_total, fiber_total, sugars_total],
-        sugars_list
+        recipe_totals: [water_total, protein_total, total_fat_total, carbohydrates_total, ash_total, fiber_total, sugars_total]
     })
 }
 
