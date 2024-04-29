@@ -27,7 +27,7 @@ export async function PATCH(RequestEvent){
     const recipes_data = await db.collection("recipes").find({user: user}).toArray();
 
     const recipes_names = recipes_data.map((recipe_name) => {return recipe_name.name})
-   // const recipes_waters = recipes_data.map((recipe_water) => {return recipe_water.water})
+    //const recipes_waters = recipes_data.map((recipe_water) => {return recipe_water.water})
 
     const { new_qty } = await request.json()
 
@@ -48,6 +48,8 @@ export async function PATCH(RequestEvent){
             return json({
                 food_ID: recipes_data[recipeIndex].food_items[foodIndex].food_ID,
                 //water : recipes_waters, //.map((nutrient) => {return (parseFloat(new_qty) * (nutrient/100))}),
+                water: recipes_data[recipeIndex].food_items[foodIndex].water,
+                
                 qty: new_qty
             })
         }
