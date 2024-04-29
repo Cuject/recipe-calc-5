@@ -21,6 +21,10 @@ export async function GET(RequestEvent){
 
     var search_results = []
 
+    for(i=0; i < food_NDs.length(); i++){
+        search_results.push(food_NDs[i])
+    }
+
  
 
 
