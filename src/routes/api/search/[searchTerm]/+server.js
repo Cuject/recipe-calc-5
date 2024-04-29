@@ -22,7 +22,7 @@ export async function GET(RequestEvent){
     var search_results = []
 
     for (i = 0; i < food_NDs.length; i++){
-        if(food_NDs[i].toLowerCase().includes(searchTerm.toLowerCase()) || com_Names[i].toLowerCase().includes(searchTerm.toLowerCase())){
+        if(food_NDs[i].includes(searchTerm) || com_Names[i].includes(searchTerm)){
             search_results.push(fct[i]);
         }
     }
@@ -34,6 +34,6 @@ export async function GET(RequestEvent){
 
     return json({
         search_results,
-        searchTerm: searchTerm.toLowerCase()
+        searchTerm: searchTerm
     })
 }
