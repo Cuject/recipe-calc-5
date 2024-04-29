@@ -17,7 +17,7 @@ export async function GET(RequestEvent){
         }));
     
     const food_NDs  = fct.map((item) => {return item.food_ND})
-    const sci_Names = fct.map((item) => {return item.sci_Name})
+    const com_Names = fct.map((item) => {return item.com_Name})
 
 
 
@@ -25,6 +25,6 @@ export async function GET(RequestEvent){
     
 
     return json({
-        food_NDs
+        com_Names
     })
 }
