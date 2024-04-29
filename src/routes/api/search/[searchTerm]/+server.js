@@ -21,12 +21,7 @@ export async function GET(RequestEvent){
 
     var search_results = []
 
-    for (i = 0; i < food_NDs.length; i++){
-        if(food_NDs[i].includes(searchTerm) || com_Names[i].includes(searchTerm)){
-            search_results.push(fct[i]);
-        }
-    }
-
+ 
 
 
 
