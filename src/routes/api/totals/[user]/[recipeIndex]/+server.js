@@ -90,30 +90,36 @@ export async function GET(RequestEvent){
     return json({
         //water_list,
         recipe_totals: [
-            water_total, 
-            protein_total, 
-            total_fat_total, 
-            carbohydrates_total, 
-            ash_total, fiber_total, 
-            sugars_total, 
-            energy_total,
-            FA_satu_total,
-            FA_mono_total,
-            FA_poly_total,
-
-            calcium_total,
-            phosphorus_total,
-            iron_total,
-            sodium_total,
-            vit_A_total,
-            beta_carotene_total,
-            rae_total,
-            thiamin_total,
-            riboflavin_total,
-            niacin_total,
-            vit_C_total,
-            cholesterol_total
+            water_total, //0
+            protein_total, //1
+            total_fat_total, //2
+            carbohydrates_total, //3
+            ash_total, //4
+            fiber_total, //5
+            sugars_total, //6
         ],
+
+        other_totals: [
+            FA_satu_total, //0
+            FA_mono_total, //1
+            FA_poly_total, //2
+
+            calcium_total, //3
+            phosphorus_total, //4
+            iron_total, //5
+            sodium_total, //6
+            vit_A_total, //7
+            beta_carotene_total, //8
+            rae_total, //9
+            thiamin_total, //10
+            riboflavin_total, //11
+            niacin_total, //12
+            vit_C_total, //13
+            cholesterol_total //14
+        ],
+
+        energy: energy_total,
+
     })
 }
 
