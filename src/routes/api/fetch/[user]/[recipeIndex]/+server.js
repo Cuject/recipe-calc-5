@@ -14,11 +14,12 @@ export async function GET(RequestEvent){
 
     const recipe_data = recipes_data[recipeIndex]
 
-    const water_total = recipe_data.food_items.map((item) => {return item.water})
+    const water_list = recipe_data.food_items.map((item) => {return ((item.water/100) * item.qty)})
 
     return json({
+        water_list,
         recipe_data,
-        water_total
+        
     })
 }
 
