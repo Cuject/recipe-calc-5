@@ -109,7 +109,7 @@ export async function GET(RequestEvent){
             beta_carotene_total,
             rae_total,
             thiamin_total,
-            riboflavin_total,,
+            riboflavin_total,
             niacin_total,
             vit_C_total,
             cholesterol_total
