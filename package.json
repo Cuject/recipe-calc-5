@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/speed-insights": "^1.0.10",
 		"js-sha256": "^0.10.1",
 		"mongodb": "^6.3.0",
 		"svelte-chartjs": "^3.1.5"
